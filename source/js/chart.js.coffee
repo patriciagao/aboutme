@@ -14,6 +14,7 @@ window.Highcharts.createKnowledgeGraph = (options={}) ->
     chart:
       renderTo: renderTo
       type: 'column'
+      height: 330
     title:
       text: false
     legend:

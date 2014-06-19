@@ -40,8 +40,8 @@
   }
 
   .languages {
-    padding: $default-padding;
     margin: 0 auto;
+    margin-bottom: $default-margin*2;
 
     .language {
       float: left;
@@ -73,7 +73,6 @@
   }
 
   .interests {
-    padding: $default-padding*3;
     color: $blue;
     text-align: center;
 
@@ -95,18 +94,15 @@
       padding-right: $default-padding*4;
       border-right: 1px $gray-light dashed;
     }
-    .languages {
-      padding: $default-padding*3;
-    }
-
-    .interests {
-      padding: $default-padding*3;
-    }
   }
 }
 
 @media #{$large-up} {
   .content{
+    .timeline-wrapper {
+      min-height: 175px + 160px; // Fix for firefox
+    }
+
     .timeline {
       width: 100%;
       min-height: 175px;
