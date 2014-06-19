@@ -1,0 +1,92 @@
+---
+title: About me Patricia Gao
+---
+.header
+  .line
+  .header-box.row
+    .section-title.large-12.columns
+      %p
+        %i.icon.icon-clipboard
+        = t(:basic_and_contact_title)
+    .info.large-9.medium-8.columns
+      .row
+        .photo.large-3.medium-5.medium-uncentered.small-centered.columns
+          = image_tag "albert_einstein.jpg"
+        .title.large-9.medium-7.columns
+          %h1.name
+            = t(:name)
+          %h2.subtitle
+            = t(:subtitle)
+        .description.large-9.columns
+          %p
+            = t(:short_description)
+    .contact.large-3.medium-4.columns
+      - data.contact.each do |contact_way|
+        %p
+          %i.icon{:class => contact_way.icon_class}
+          - if contact_way.is_link
+            = link_to contact_way.href do
+              =contact_way.text
+          - else
+            = contact_way.text
+.content
+  .row
+    .section-title.large-12.columns
+      %p
+        %i.icon.icon-briefcase
+        = t(:education_and_work_title)
+  .row
+    .medium-12.columns
+      %ul.timeline
+        - data.education_and_work.each do |achivement|
+          %li.achivement
+            .achivement-icon
+            .achivement-info{class: achivement.type }
+              .row
+                .large-12.medium-4.small-12.columns
+                  %h3
+                    = t(achivement.title)
+                .date.large-12.medium-5.small-12.columns
+                  %p
+                    = "#{t(achivement.start_date)} - #{t(achivement.end_date)}"
+                .place.small-12.columns
+                  %p
+                    = t(achivement.place)
+  .row
+    .medium-7.columns
+      .row
+        .section-title.large-12.columns
+          %p
+            %i.icon.icon-terminal
+            = t(:knowledges)
+      .row
+        .medium-12.columns
+          .knowledges-wrap
+            #knowledges
+            .more-knowledges
+              %p
+                ="#{t(".more")} #{data.more_knowledges.map(&:name).to_sentence}"
+    .medium-5.columns
+      .row
+        .section-title.large-12.columns
+          %p
+            %i.icon.icon-bulhorn
+            = t(:languages)
+      .row
+        .languages.medium-12.columns
+          -data.languages.each do |language|
+            %div{class: "language size-#{language.height} icon #{language.icon}"}
+              %span
+                = language.text
+      .row
+        .section-title.large-12.columns
+          %p
+            %i.icon.icon-thumbup
+            = t(:interests)
+      .row.interests
+        -data.interests.each do |interest|
+          %div{class: "medium-3 small-6 columns"}
+            .interest
+              %div{class: "icon #{interest.icon}"}
+              %p
+                = t(interest.name)

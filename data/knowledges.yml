@@ -1,0 +1,15 @@
+- name: "knowledge.name_1"
+  value: 9
+  hover: "knowledge.hover_1"
+- name: "knowledge.name_2"
+  value: 3
+  hover: "knowledge.hover_2"
+- name: "knowledge.name_3"
+  value: 10
+  hover: "knowledge.hover_3"
+- name: "knowledge.name_4"
+  value: 8
+  hover: "knowledge.hover_4"
+- name: "knowledge.name_5"
+  value: 7
+  hover: "knowledge.hover_5"

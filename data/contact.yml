@@ -1,0 +1,18 @@
+- text: "Princeton, New Jersey"
+  is_link: false
+  icon_class: "icon-home"
+- text: "aeinstein@gmail.com"
+  is_link: false
+  icon_class: "icon-at"
+- text: "linked.in/aeinstein"
+  is_link: true
+  href: "http://www.linkedin.com/pub/albert-einstein/93/39a/6b6"
+  icon_class: "icon-linkedin"
+- text: "twitter.com/AlbertEinstein"
+  is_link: true
+  href: "https://twitter.com/AlbertEinstein"
+  icon_class: "icon-twitter"
+- text: "github.com/alberteinstein"
+  is_link: true
+  href: "https://github.com/alberteinstein"
+  icon_class: "icon-github"

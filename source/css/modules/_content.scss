@@ -1,0 +1,136 @@
+.content {
+  margin-bottom: $default-margin*2;
+
+  .timeline {
+    list-style: none;
+    max-width: 100%;
+    margin: $default-margin*2 0 $default-margin $default-margin*3;
+    padding-left: $default-padding*4;
+    border-left: 4px $gray-light solid;
+
+    li {
+      margin: $default-margin*2 0;
+      position: relative;
+
+      .achivement-icon {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border: 4px $blue solid;
+        @include border-radius($default-border-radius);
+        background: #fff;
+        margin-top: -10px;
+        top: 46%;
+        left: -56px;
+      }
+
+      .achivement-info {
+        @include achivement-box(true);
+
+        .date, .place {
+          color: $black;
+        }
+
+        .date {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .languages {
+    padding: $default-padding;
+    margin: 0 auto;
+
+    .language {
+      float: left;
+      position: relative;
+      color: $gray-light;
+      margin-right: $default-margin;
+
+      $i: 10;
+        @while $i > 0 {
+        &.size-#{$i} {
+          font-size: $default-margin*1.5 * $i;
+
+          span {
+            font-size: $i*4 + $default-font-size;
+          }
+        }
+        $i: $i - 1;
+      }
+
+      span {
+        position: absolute;
+        top: 20%;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        color: #FFF;
+      }
+    }
+  }
+
+  .interests {
+    padding: $default-padding*3;
+    color: $blue;
+    text-align: center;
+
+    .interest {
+      .icon {
+        font-size: 50px;
+      }
+
+      p {
+        color: $black;
+      }
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .content {
+    .knowledges-wrap {
+      padding-right: $default-padding*4;
+      border-right: 1px $gray-light dashed;
+    }
+    .languages {
+      padding: $default-padding*3;
+    }
+
+    .interests {
+      padding: $default-padding*3;
+    }
+  }
+}
+
+@media #{$large-up} {
+  .content{
+    .timeline {
+      width: 100%;
+      min-height: 175px;
+      border-left: none;
+      border-top: 4px $gray-light solid;
+      margin: 160px 0 0;
+      padding: 0;
+      display: table;
+      border-spacing: $default-padding 0;
+
+        li {
+          display: table-cell;
+
+          .achivement-icon {
+            margin: 0 auto;
+            top: -17px;
+            left: 0;
+            right: 0;
+          }
+
+          .achivement-info {
+            @include achivement-box(false)
+          }
+       }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+---
+en:
+  basic_and_contact_title: "Basic & contact info"
+  name: "Albert Einstein"
+  subtitle: "Scientist"
+  short_description: "Was a German-born theoretical physicist. He received the 1921 Nobel Prize in Physics 'for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect'."
+  education_and_work_title: "Education & work experience"
+  education_and_work:
+    title_1: "Physics Degree"
+    start_date_1: "12/1896"
+    end_date_1: "04/1900"
+    place_1: "Swiss Polytechnic University in Zurich"
+    title_2: "Clerk"
+    start_date_2: "12/1902"
+    end_date_2: "04/1909"
+    place_2: "Swiss Patent Office"
+    title_3: "Professor"
+    start_date_3: "07/1912"
+    end_date_3: "06/1914"
+    place_3: "Swiss Federal Institute of Technology in Zurich"
+    title_4: "Director"
+    start_date_4: "01/1914"
+    end_date_4: "07/1920"
+    place_4: "Kaiser Wilhelm Institute"
+    title_5: "Professor"
+    start_date_5: "12/1932"
+    end_date_5: "04/1955"
+    place_5: "Institute of Advanced Study at Princeton"
+  knowledges: "Knowledges"
+  knowledge:
+    name_1: "phisics"
+    hover_1: "'Photoelectric effect'"
+    name_2: "chemistry"
+    hover_2: "'Brownian motion'"
+    name_3: "theory of relativity"
+    hover_3: "E=mc2"
+    name_4: "maths"
+    hover_4: "1+1=?"
+    name_5: "philosophy"
+    hover_5: "The difference between stupidity and genius is that genius has its limits."
+  more: "More: "
+  languages: "Languages"
+  interests: "Interests"
+  interest:
+    name_1: "Travelling"
+    name_2: "TV series"
+    name_3: "Nature"
+    name_4: "Rock music"
+  chart:
+    level_1: 'Rookie'
+    level_2: 'Good'
+    level_3: 'Quite Good'
+  support:
+    array:
+      last_word_connector: " and "

@@ -1,0 +1,8 @@
+- name: "interest.name_1"
+  icon: "icon-world"
+- name: "interest.name_2"
+  icon: "icon-monitor"
+- name: "interest.name_3"
+  icon: "icon-bug"
+- name: "interest.name_4"
+  icon: "icon-music"
