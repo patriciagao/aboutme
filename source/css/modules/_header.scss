@@ -44,13 +44,16 @@
       }
 
       .title {
-        padding-left: 0;
+       padding-left: 0;
 
         .name {
           width: 100%;
+          padding-left: 0;
+          padding-top: $default-padding;
         }
 
         .subtitle {
+          padding: 0;
           margin-top: $default-margin/1.5;
         }
       }
@@ -111,10 +114,6 @@
       margin: $default-margin auto $small-margin  auto;
       padding: $default-padding+10 $default-padding;
 
-      .section-title {
-        padding-left: 0.9375rem;
-      }
-
       .info {
         padding-right: $default-margin;
         padding-bottom: 0;
@@ -124,14 +123,24 @@
         .photo {
           img {
             height: $header-height - $default-padding;
+            width: 100%;
+
             margin-bottom: 0;
             margin-right: $default-margin;
           }
         }
 
         .title {
+          .name {
+            width: auto;
+            float: left;
+          }
+
           .subtitle {
-            margin-top: $default-margin/2;
+            float: left;
+            margin-top: 22px;
+            margin-left: 0;
+            padding-left: 0;
           }
         }
 
@@ -168,6 +177,26 @@
       .info {
         .description {
           padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-only} {
+
+  .header {
+    .header-box{
+      .info {
+        .title {
+          .subtitle {
+            margin-top: $small-margin;
+          }
+        }
+      }
+      .contact {
+        p {
+          margin-top: $default-padding/2.5;
         }
       }
     }

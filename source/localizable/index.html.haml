@@ -4,19 +4,20 @@ title: About me Patricia Gao
 .header
   .line
   .header-box.row
-    .section-title.large-12.columns
-      %p
-        %i.icon.icon-clipboard
-        = t(:basic_and_contact_title)
     .info.large-9.medium-8.columns
       .row
-        .photo.large-3.medium-5.medium-uncentered.small-centered.columns
+        .photo.large-3.medium-4.medium-uncentered.small-centered.columns
           = image_tag "albert_einstein.jpg"
-        .title.large-9.medium-7.columns
-          %h1.name
-            = t(:name)
-          %h2.subtitle
-            = t(:subtitle)
+        .title.large-9.medium-8.columns
+          .section-title
+            %p
+              %i.icon.icon-clipboard
+              = t(:basic_and_contact_title)
+            .row
+              %h1.name.large-4.columns
+                = t(:name)
+              %h2.subtitle.large-4.columns
+                = t(:subtitle)
         .description.large-9.columns
           %p
             = t(:short_description)
