@@ -7,37 +7,38 @@ title: About me Patricia Gao
     .info.large-9.medium-8.columns
       .row
         .photo.large-3.medium-4.medium-uncentered.small-centered.columns
-          = image_tag "albert_einstein.jpg"
+          = image_tag "aboutme_foto.png"
         .title.large-9.medium-8.columns
           .section-title
             %p
               %i.icon.icon-clipboard
               = t(:basic_and_contact_title)
             .row
-              %h1.name.large-4.columns
+              %h1.name.large-5.columns
                 = t(:name)
-              %h2.subtitle.large-4.columns
+              %h2.subtitle.large-5.columns
                 = t(:subtitle)
         .description.large-9.columns
           %p
             = t(:short_description)
     .contact.large-3.medium-4.columns
-      - data.contact.each do |contact_way|
-        %p
-          %i.icon{:class => contact_way.icon_class}
-          - if contact_way.is_link
-            = link_to contact_way.href do
-              =contact_way.text
-          - else
-            = contact_way.text
-.content
-  .row
-    .section-title.large-12.columns
+      %ul.contacts
+        - data.contact.each do |contact_way|
+          %li
+            %span.icon{:class => contact_way.icon_class}
+            - if contact_way.is_link
+              = link_to contact_way.href, target: "_blank" do
+                =contact_way.text
+            - else
+              = contact_way.text
+
+.content.row
+  .large-12.medium-6.small-12.columns
+    .section-title
       %p
         %i.icon.icon-briefcase
         = t(:education_and_work_title)
-  .row.timeline-wrapper
-    .large-12.medium-9.small-12.medium-centered.columns
+    .timeline-wrapper
       %ul.timeline
         - data.education_and_work.each do |achivement|
           %li.achivement
@@ -53,41 +54,45 @@ title: About me Patricia Gao
                 .place.small-12.columns
                   %p
                     = t(achivement.place)
-  .row
-    .medium-7.columns
-      .row
-        .section-title.large-12.columns
-          %p
-            %i.icon.icon-terminal
-            = t(:knowledges)
-      .row
-        .medium-12.columns
-          .knowledges-wrap
-            #knowledges
-            .more-knowledges
-              %p
-                ="#{t(".more")} #{data.more_knowledges.map(&:name).to_sentence}"
-    .medium-5.columns
-      .row
-        .section-title.large-12.columns
-          %p
-            %i.icon.icon-bulhorn
-            = t(:languages)
-      .row
-        .languages.medium-12.columns
+
+  .large-7.medium-6.columns
+    .row
+      .section-title.large-12.columns
+        %p
+          %i.icon.icon-terminal
+          = t(:knowledges)
+    .row
+      .medium-12.columns
+        .knowledges-wrap
+          #knowledges
+          .more-knowledges
+            %p
+              ="#{t(".more")} #{i18n_map(data.more_knowledges, :name).to_sentence}."
+
+  .large-5.medium-6.columns.languages-section
+    .row
+      .section-title.large-12.columns
+        %p
+          %i.icon.icon-bulhorn
+          = t(:languages)
+    .row
+      .languages.small-12.columns
+        .language-wrap
           -data.languages.each do |language|
             %div{class: "language size-#{language.height} icon #{language.icon}"}
               %span
                 = language.text
-      .row
-        .section-title.large-12.columns
-          %p
-            %i.icon.icon-thumbup
-            = t(:interests)
-      .row.interests
-        -data.interests.each do |interest|
-          %div{class: "medium-3 small-6 columns"}
-            .interest
-              %div{class: "icon #{interest.icon}"}
-              %p
-                = t(interest.name)
+
+  .large-5.medium-12.columns
+    .row
+      .section-title.large-12.columns
+        %p
+          %i.icon.icon-thumbup
+          = t(:interests)
+    .row.interests
+      -data.interests.each do |interest|
+        .large-6.medium-3.small-6.columns
+          .interest
+            %div{class: "icon #{interest.icon}"}
+            %p
+              = t(interest.name)

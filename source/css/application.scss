@@ -1,10 +1,12 @@
 // Foundation
 @import "foundation/scss/normalize";
 @import "foundation/scss/foundation/components/grid";
+@import "foundation/scss/foundation/components/visibility";
 
 // Compass
 @import "compass/css3";
 
 // Custom css
+@import "mixins/*";
 @import "base/**/*";
 @import "modules/*";

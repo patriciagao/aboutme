@@ -1,10 +1,11 @@
 .header {
   position: relative;
   min-height: $header-height;
+  padding: $default-margin - $small-margin;
 
   .line {
     height: $header-height/4;
-    top: $header-height/2 + $default-margin*2;
+    top: 40%;
     left: 0;
     right: 0;
     position: absolute;
@@ -17,16 +18,16 @@
   }
 
   .header-box {
-    width: 90%;
+    width: 100%;
     border: 1px solid $gray-light;
-    background: #FFF;
-    margin: $default-margin*2 auto $default-margin auto;
-    padding: $default-padding*2 $default-padding $default-padding*2 $default-padding*2;
-    @include border-radius(6px);
+    background: $body-color;
+    margin: 0 auto;
+    padding: $default-padding $default-padding/2 $default-padding $default-padding;
+    @include border-radius($default-border-radius);
     @include box-shadow(lighten($gray, 50%) 2px 2px 2px);
 
     .info {
-      padding: 0 0 $default-padding*2 0;
+      padding: 0 0 $default-padding 0;
       border-bottom: 1px $gray-light dashed;
 
       .row { //undo negative margins for nested rows
@@ -36,9 +37,8 @@
 
       .photo {
         text-align: center;
-
         img {
-          height: $header-height - $default-padding;
+          height: $header-height;
           margin-bottom: $default-margin;
         }
       }
@@ -49,55 +49,49 @@
         .name {
           width: 100%;
           padding-left: 0;
-          padding-top: $default-padding;
         }
 
         .subtitle {
           padding: 0;
-          margin-top: $default-margin/1.5;
-        }
+          margin-top: 12px;
+         }
       }
 
       .description {
         padding-left: 0;
-        margin: $default-margin 0 0 0;
+
+        p {
+          line-height: 1.4;
+          margin-bottom: 0;
+        }
       }
     }
 
     .contact {
-      margin-top: $default-padding*2;
+      height: $header-height - $default-padding*2;
+      margin-top: $default-padding;
+      padding-right: 0;
       padding-left: 0;
       color: $blue;
 
-      a, p {
-        float: left;
-        color: $blue;
-        float: left;
+      .contacts {
+        height: 100%;
         margin: 0;
-        margin-bottom: $default-margin*2;
+        list-style: none;
+        padding: 0;
 
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      a {
-        max-width: 85.4%;
-
-        &:hover {
-          color: darken($blue, 50%);
+        li {
+          display: inline-block;
+          vertical-align: middle;
+          width: 100%;
+          height: 21%;
+          font-size: 14px;
         }
 
-        i {
-          text-decoration: none;
+        .icon {
+          margin-right: 5px;
+          font-size: 20px;
         }
-      }
-
-      .icon {
-        float: left;
-        margin-right: 5px;
-        font-size: 18px;
-        margin-top: -1px;
       }
     }
   }
@@ -106,13 +100,12 @@
 @media #{$medium-up} {
   $small-margin: $default-margin;
 
-  $default-margin: $default-margin*2;
-  $default-padding: $default-padding*3;
+  $default-margin: $default-margin + 10;
+  $default-padding: $default-padding + 10;
 
   .header {
     .header-box {
-      margin: $default-margin auto $small-margin  auto;
-      padding: $default-padding+10 $default-padding;
+      padding: $default-padding $default-padding;
 
       .info {
         padding-right: $default-margin;
@@ -122,9 +115,8 @@
 
         .photo {
           img {
-            height: $header-height - $default-padding;
+            height: 100%;
             width: 100%;
-
             margin-bottom: 0;
             margin-right: $default-margin;
           }
@@ -138,27 +130,20 @@
 
           .subtitle {
             float: left;
-            margin-top: 22px;
-            margin-left: 0;
-            padding-left: 0;
           }
         }
 
         .description {
           padding-left: 0.9375rem;
           padding-right: 0;
-          margin: $default-margin/2 0 0 0;
+          //margin-top: $small-margin/2;
         }
       }
 
       .contact {
-        padding-left: $default-margin;
         margin-top: 0;
+        padding-left: $default-margin;
 
-        a, p {
-          margin: 0;
-          margin-bottom: $default-margin;
-        }
         .icon {
           margin-right: 5px;
           font-size: 18px;
@@ -171,8 +156,10 @@
 
 @media #{$large-up} {
   .header {
+    padding: $default-margin;
+
     .header-box {
-      max-width: 62.5rem - 0.9375rem;
+      max-width: 60.5rem;
 
       .info {
         .description {
@@ -184,20 +171,10 @@
 }
 
 @media #{$medium-only} {
-
   .header {
-    .header-box{
-      .info {
-        .title {
-          .subtitle {
-            margin-top: $small-margin;
-          }
-        }
-      }
+    .header-box {
       .contact {
-        p {
-          margin-top: $default-padding/2.5;
-        }
+        height: 250px;
       }
     }
   }

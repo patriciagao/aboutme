@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url('/fonts/OpenSans-Regular.ttf');
+}
+
+body {
+  font-family: "OpenSans-Regular";
+}
+
+h1 {
+  font-size: 36px;
+  color: $blue;
+  margin: 0;
+  line-height: $default-line-height;
+}
+
+h2 {
+  font-size: 20px;
+  color: $black-darker;
+  margin: 0;
+  line-height: $default-line-height;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 18px;
+  color: $black-darker;
+  margin: 0;
+  line-height: $default-line-height;
+  font-weight: normal;
+}
+
+p {
+  font-size: $default-font-size;
+  color: $black;
+  margin: $default-margin/2 0;
+  width: 100%;
+  line-height: $default-line-height;
+}
+
+a {
+  font-size: 14px;
+  color: $blue;
+
+  &:hover {
+    color: darken($blue, 50%);
+  }
+}
+
+

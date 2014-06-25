@@ -1,0 +1,88 @@
+.content {
+  .knowledges-wrap {
+    p {
+      line-height: 1.4;
+    }
+  }
+
+  .languages {
+    margin: $default-margin/2 auto;
+    text-align: center;
+
+    .language-wrap {
+      margin: 0 auto;
+      width: 280px;
+    }
+
+    .language {
+      float: left;
+      position: relative;
+      color: $gray-darker;
+      margin-right: $default-margin;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      $i: 10;
+        @while $i > 0 {
+        &.size-#{$i} {
+         font-size: 90% * $i;
+
+
+          span {
+            font-size: $i*3 + $default-font-size;
+          }
+        }
+        $i: $i - 1;
+      }
+
+      span {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        color: #FFF;
+      }
+    }
+  }
+
+  .interests {
+    margin: $default-margin/2 0;
+    color: $blue;
+    text-align: center;
+
+    .interest {
+      .icon {
+        font-size: 50px;
+      }
+
+      p {
+        color: $black;
+      }
+    }
+  }
+}
+
+@media #{$medium-only} {
+  .languages-section {
+    margin-top: $default-margin;
+  }
+}
+
+@media #{$large-up} {
+  .content{
+    margin-bottom: $default-margin*2;
+
+    .knowledges-wrap {
+      padding-right: $default-padding + 10;
+      border-right: 1px $gray-light dashed;
+
+      .more-knowledges p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

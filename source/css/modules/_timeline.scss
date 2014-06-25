@@ -1,0 +1,81 @@
+.timeline {
+  list-style: none;
+  max-width: 100%;
+  margin: $default-margin 0 $default-margin 12px;
+  padding-left: $default-padding*2;
+  border-left: 4px $gray-light solid;
+
+  li {
+    margin: $default-margin 0;
+    position: relative;
+
+    .achivement-icon {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 30px;
+      border: 4px $blue solid;
+      @include border-radius($default-border-radius);
+      background: #fff;
+      margin-top: -10px;
+      top: 46%;
+      left: -56px;
+    }
+
+    .achivement-info {
+      @include achivement-box(true);
+
+      .date, .place {
+        color: $black;
+      }
+
+      .date {
+        font-size: 12px;
+      }
+
+      .place p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media #{$medium-only} {
+  .timeline {
+    padding-right: $default-padding + 10;
+    border-right: 1px $gray-light dashed;
+  }
+}
+
+@media #{$large-up} {
+  .timeline-wrapper {
+    min-height: 180px;
+    margin-bottom: $default-padding + 10;
+  }
+
+  .timeline {
+    width: 100%;
+    min-height: 180px;
+    border-left: none;
+    border-top: 4px $gray-light solid;
+    margin: 160px 0 0;
+    padding: 0;
+    display: table;
+    border-spacing: $default-padding/2 0;
+
+      li {
+        display: table-cell;
+
+        .achivement-icon {
+          margin: 0 auto;
+          top: -17px;
+          left: 0;
+          right: 0;
+        }
+
+        .achivement-info {
+          @include achivement-box(false)
+        }
+     }
+  }
+}

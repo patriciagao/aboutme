@@ -5,8 +5,6 @@ window.Highcharts.createKnowledgeGraph = (options={}) ->
   hovers = options['hovers'] || throw "key hovers is required, expected to be a list of hovers names"
   values = options['values'] || throw "key knowledges is required, expected to be a list of knowledges integers in [0..10] range"
   levels = options['levels'] || ['Rookie', 'Good', 'Quite Good']
-  levels.unshift("")
-
 
   completeOptions =
     credits:
@@ -15,6 +13,7 @@ window.Highcharts.createKnowledgeGraph = (options={}) ->
       renderTo: renderTo
       type: 'column'
       height: 330
+      marginLeft: 50
     title:
       text: false
     legend:
@@ -24,21 +23,29 @@ window.Highcharts.createKnowledgeGraph = (options={}) ->
         text: null
       categories: knowledges
       gridLineColor: 'transparent'
+      labels:
+        rotation: -45
+        style:
+          fontFamily: 'OpenSans-Regular'
     yAxis:
       title:
         text: null
       labels:
+        style:
+          fontFamily: 'OpenSans-Regular'
         formatter: ->
-          @value = parseFloat(@value.toFixed(2))
+          return "" if @value == 0
           previous = 0
+          next = 10/levels.length
           for level in levels
-            if @value >= previous && @value < (10/levels.length + previous)
+            if @value > previous && @value <= next
               return level
-            previous += parseFloat((10/levels.length).toFixed(2))
+            previous += 10/levels.length
+            next += 10/levels.length
       min: 0
       max: 10
-      tickInterval: (10/levels.length)
-      lineColor: '#979797'
+      tickInterval: 10/levels.length
+      lineColor: '#B6B2A7'
       lineWidth: 1
       gridLineColor: 'transparent'
     series: [
@@ -53,4 +60,5 @@ window.Highcharts.createKnowledgeGraph = (options={}) ->
       valueSuffix: '',
       formatter: ->
         hovers[@point.x]
+
   new Highcharts.Chart(completeOptions)
