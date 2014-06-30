@@ -1,4 +1,5 @@
 require "lib/custom_helpers"
+require "sass-globbing"
 helpers CustomHelpers
 
 ###
@@ -6,11 +7,11 @@ helpers CustomHelpers
 ###
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
-#
-#
+compass_config do |config|
+  config.output_style = (environment == :production) ? :compressed : :expanded
+  config.relative_assets = true
+  config.line_comments = false
+end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -51,7 +52,10 @@ activate :livereload
 # end
 
 # Enable localization
-activate :i18n
+activate :i18n, mount_at_root: false
+page "/index.html", :proxy => "/localizable/index.html"
+
+activate :directory_indexes
 
 set :css_dir, 'css'
 
@@ -65,17 +69,14 @@ sprockets.append_path "#{root}/bower_components/"
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
-  # activate :relative_assets
-
-  # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+  activate :relative_assets
 end

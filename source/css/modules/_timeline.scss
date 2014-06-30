@@ -2,7 +2,7 @@
   list-style: none;
   max-width: 100%;
   margin: $default-margin 0 $default-margin 12px;
-  padding-left: $default-padding*2;
+  padding-left: $default-padding + 10;
   border-left: 4px $gray-light solid;
 
   li {
